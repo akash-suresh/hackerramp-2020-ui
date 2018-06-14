@@ -15,8 +15,9 @@ function YouTubeItem({row}) {
             />
           </div>
           <div className="col-sm-8">
-            <h4><a href={row.reviewPermaLink}>{row.reviewContent}</a></h4>
-            <strong>&#9734; {row.reviewerName}</strong>
+            <h4 className="reviewTitle"><a href={row.reviewPermaLink}>{row.reviewTitle}</a></h4>
+            <strong className="reviewStrong">{row.reviewerName}</strong>
+            <p>{row.reviewContent.substr(0,200)+"..."}</p>
           </div>
         </div>
       </li>

@@ -14,7 +14,8 @@ export default class User extends Component {
   }
 
   getProductData() {
-    const {username} = this.props
+    debugger
+    const {username} = this.props.params
     this.props.getProductData(username).then(productData => {
       debugger
       this.setState({productData});
@@ -32,13 +33,12 @@ export default class User extends Component {
   render() {
     const {username} = this.props.params
     const {productData} = this.state
-    debugger
     return (
       <div className="container">
         <section className="user border-bottom">
           <div className="row">
             <div className="col-sm-9">
-              <h3 className="The-Reviewer">The Reviewer</h3>
+              <h3 className="The-Reviewer">Critico</h3>
             </div>
             <div className="col-sm-3">
               <RepoFilter onUpdate={this.handleFilterUpdate} />
@@ -51,10 +51,10 @@ export default class User extends Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            <Widget list={productData.userReviews} name={"Reviews"}/>
+            <Widget list={productData.userReviews} displayName={"Verified User Reviews"} rowName={"Reviews"}/>
           </div>
           <div className="col-sm-6">
-            <Widget list={productData.videoReviews} name={"YouTube"} />
+            <Widget list={productData.videoReviews} displayName={"YouTube"} rowName={"YouTube"} />
           </div>
         </div>
       </div>
@@ -63,9 +63,7 @@ export default class User extends Component {
 }
 
 User.propTypes = {
-  params: PropTypes.shape({
-    username: PropTypes.string,
-  }),
+  params: PropTypes.object,
   getProductData: PropTypes.func,
 }
 

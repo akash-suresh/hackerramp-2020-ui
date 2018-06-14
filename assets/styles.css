@@ -21,6 +21,39 @@ section {
 	padding: 20px 0;
 }
 
+body {
+	/*background-image: url("wallpaper.jpg");*/
+}
+
+.home-item {
+  width: 70px;
+  height: 30px;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4a4a4a;
+}
+.The-Reviewer-Home {
+  width: 1051px;
+  height: 171px;
+  font-family: Georgia;
+  font-size: 150px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  background-color: #ffffff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
 .The-Reviewer {
   width: 351px;
   height: 57px;
@@ -36,6 +69,9 @@ section {
   background-color: #ffffff;
 }
 
+.selectDropDown {
+	text-align: center;
+}
 .border-bottom {
 	border-bottom: 1px solid #eee;
 }
@@ -47,6 +83,15 @@ section {
 }
 .review_image {
     max-width: 100px;
+}
+.reviewTitle {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.reviewStrong {
+    margin-left: 0px;
+    color: #000000;
 }
 section.home {
 	padding-top: 200px;

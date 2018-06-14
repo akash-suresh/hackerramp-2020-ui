@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://46358c60.ngrok.io/api/products/1/';
+const BASE_URL = 'http://46358c60.ngrok.io/api/products/';
 
 export {getProductData};
 
 function getProductData(username) {
-  //const url = `${BASE_URL}/product/${username}`;
-  const url = `${BASE_URL}`;
+  debugger
+  const url = `${BASE_URL}/${username}`;
   return axios.get(url).then(response => response.data);
 
 }

@@ -12,13 +12,13 @@ export default class Widget extends Component {
 
   render() {
     const {list} = this.props;
-    const {name} = this.props;
-    debugger
+    const {displayName} = this.props;
+    const {rowName} = this.props;
     return (
    	  <div>
-   	    <h3>{name}</h3>
+   	    <h3>{displayName}</h3>
         <ul className="list-unstyled">
-          {renderRepos(list, name)}
+          {renderRepos(list, rowName)}
         </ul>
       </div>
     );
@@ -26,7 +26,8 @@ export default class Widget extends Component {
 }
 
 Widget.propTypes = {
-  name: PropTypes.string.isRequired,
+  rowName: PropTypes.string.isRequired,
+  displayName: PropTypes.string.isRequired,
   list: PropTypes.array.isRequired,
 };
 
