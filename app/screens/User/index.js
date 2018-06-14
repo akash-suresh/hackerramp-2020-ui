@@ -3,7 +3,7 @@ import Profile from './components/Profile'
 import RepoFilter from './components/RepoFilter'
 import RepoList from './components/RepoList'
 import PDP from './components/PDP'
-//import Widget from './components/Widget'
+import Widget from './components/Widget'
 
 import {getProductData} from '../../utils/critico-api'
 
@@ -16,11 +16,12 @@ export default class User extends Component {
   getProductData() {
     const {username} = this.props
     this.props.getProductData(username).then(productData => {
+      debugger
       this.setState({productData});
     });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getProductData();
   }
 
@@ -31,8 +32,7 @@ export default class User extends Component {
   render() {
     const {username} = this.props.params
     const {productData} = this.state
-    // var name = this.
-    var list = [1,2,3,4,5]
+    debugger
     return (
       <div className="container">
         <section className="user border-bottom">
@@ -51,9 +51,10 @@ export default class User extends Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            <RepoList filter={"abcd"} username={username}/>
+            <Widget list={productData.userReviews} name={"Reviews"}/>
           </div>
           <div className="col-sm-6">
+            <Widget list={productData.videoReviews} name={"YouTube"} />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://f0cba49d.ngrok.io/api/products/1';
+const BASE_URL = 'http://46358c60.ngrok.io/api/products/1/';
 
 export {getProductData};
 
