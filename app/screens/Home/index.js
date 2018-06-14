@@ -17,12 +17,13 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div style={{height:'804px',backgroundImage:'url("http://3.bp.blogspot.com/-LRFlxajCKS4/Vexp3jb_fEI/AAAAAAAAYGE/m82WYWe3BXA/s1600/wood-background-3780-1920x1080-wallemo.jpg")'}}>
+      <div style={{height:'804px',backgroundImage:'url("https://wallpaper-house.com/data/out/8/wallpaper2you_222371.jpg")'}}>
         <section className="container home">
           
           <h3 className="The-Reviewer-Home">Critico</h3>
           <Autocomplete
             // style={{marginLeft:'260px', width: '525px', height:'40px'}}
+            inputProps={{placeholder : "Type something..."}}
             items={[  
               { id: 1, label: 'Oneplus 6'},
               { id: 2, label: 'Oneplus 5T'},

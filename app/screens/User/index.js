@@ -46,7 +46,7 @@ export default class User extends Component {
           </div>
         </section>
 
-        <div className="row">
+        <div className="row border-bottom">
           <PDP productData={productData}/>
         </div>
         <div className="row">
@@ -55,6 +55,9 @@ export default class User extends Component {
           </div>
           <div className="col-sm-6">
             <Widget list={productData.videoReviews} displayName={"YouTube"} rowName={"YouTube"} />
+          </div>
+          <div className="col-sm-6">
+            <Widget list={productData.socialReviews} displayName={"Social Reviews"} rowName={"Twitter"} />
           </div>
         </div>
       </div>
