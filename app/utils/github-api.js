@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://api.github.com';
 
-export {getRepos, getUserData};
+export {getRepos, getUserData, getProductData};
 
 function getRepos(username) {
   const url = `${BASE_URL}/users/${username}/repos?per_page=250`;
@@ -18,4 +18,15 @@ function getUserData(username) {
     user: user.data,
     orgs: orgs.data,
   }));
+}
+
+function getProductData() {
+  return axios.all([
+    axios.get(`${BASE_URL}/users/${username}`),
+    axios.get(`${BASE_URL}/users/${username}/orgs`),
+  ])
+  .then(([user, orgs]) => ({
+    user: user.data,
+    orgs: orgs.data,
+  })); 
 }
