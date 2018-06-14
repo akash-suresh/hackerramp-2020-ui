@@ -21,8 +21,9 @@ section {
 	padding: 20px 0;
 }
 
-body {
-	/*background-image: url("wallpaper.jpg");*/
+button, input, select, textarea {
+	width: 525px;
+	height: 30px;
 }
 
 .home-item {
@@ -39,6 +40,7 @@ body {
   color: #4a4a4a;
 }
 .The-Reviewer-Home {
+  margin-left: 40px;
   width: 1051px;
   height: 171px;
   font-family: Georgia;
@@ -50,7 +52,6 @@ body {
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
-  background-color: #ffffff;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
 }
 
