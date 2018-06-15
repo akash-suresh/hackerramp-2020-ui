@@ -8,16 +8,18 @@ function ReviewItem({row}) {
     <li className="border-bottom">
         <div className="row">
           <div className="col-sm-2">
-          	<strong>&#9734; {row.reviewRating}</strong>
-            <img
+          	<img
               src={row.sourceImgUrl}
+              width="50px"
               className="img-responsive review_image"
               alt="User Avatar"
             />
+            <strong>{row.reviewRating} &#9734; </strong>
           </div>
           <div className="col-sm-10">
           	<h4><a href={row.reviewPermaLink}>{row.reviewerName}</a></h4>
             <p>{row.reviewContent.substr(0,250)+"..."}</p>
+            <p style={{color:'#ff9635'}}>{row.timeOfReview}</p>
           </div>
         </div>
       </li>

@@ -4,7 +4,7 @@ import RepoFilter from './components/RepoFilter'
 import RepoList from './components/RepoList'
 import PDP from './components/PDP'
 import Widget from './components/Widget'
-
+import TwitterWidget from './components/TwitterWidget'
 import {getProductData} from '../../utils/critico-api'
 
 export default class User extends Component {
@@ -14,10 +14,8 @@ export default class User extends Component {
   }
 
   getProductData() {
-    debugger
     const {username} = this.props.params
     this.props.getProductData(username).then(productData => {
-      debugger
       this.setState({productData});
     });
   }
@@ -41,7 +39,7 @@ export default class User extends Component {
               <h3 className="The-Reviewer">Critico</h3>
             </div>
             <div className="col-sm-3">
-              <RepoFilter onUpdate={this.handleFilterUpdate} />
+              
             </div>
           </div>
         </section>
@@ -50,15 +48,16 @@ export default class User extends Component {
           <PDP productData={productData}/>
         </div>
         <div className="row">
-          <div className="col-sm-6">
-            <Widget list={productData.userReviews} displayName={"Verified User Reviews"} rowName={"Reviews"}/>
+          <div className="col-sm-4">
+            <TwitterWidget username={username} list={productData.socialReviews} displayName={"Social Signals"} rowName={"Twitter"} />
           </div>
-          <div className="col-sm-6">
-            <Widget list={productData.videoReviews} displayName={"YouTube"} rowName={"YouTube"} />
+          <div className="col-sm-4">
+            <Widget list={productData.videoReviews} displayName={"Video Reviews"} rowName={"YouTube"} />
           </div>
-          <div className="col-sm-6">
-            <Widget list={productData.socialReviews} displayName={"Social Reviews"} rowName={"Twitter"} />
+          <div className="col-sm-4">
+            <Widget list={productData.userReviews} displayName={"User Reviews"} rowName={"Reviews"}/>
           </div>
+          
         </div>
       </div>
     );

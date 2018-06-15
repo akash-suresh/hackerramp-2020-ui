@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Tajawal:200');
+
 body {
 	color: #666;
+  /*font-family: ‘Tajawal’, sans-serif;*/
 }
 time, strong, small {
 	color: #888;
 }
 strong {
-	margin-left: 10px;
+	margin-left: 8px;
 }
 h2, h4 {
 	color: #333;
@@ -26,7 +29,18 @@ button, input, select, textarea {
 	height: 30px;
   font-style: italic;
 }
+.widgetHeader {
+  color: #7703da;
+}
+.twitterButton {
+ border: none;
+    width: auto;
+    height: auto;
+}   
 
+.twitterDP {
+  border-radius: 60px;
+}
 .home-item {
   width: 70px;
   height: 30px;
@@ -67,7 +81,7 @@ button, input, select, textarea {
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  color: #000000;
+  color: #9c958d;
   background-color: #ffffff;
 }
 

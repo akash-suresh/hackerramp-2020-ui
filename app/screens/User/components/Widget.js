@@ -16,7 +16,7 @@ export default class Widget extends Component {
     const {rowName} = this.props;
     return (
    	  <div>
-   	    <h3>{displayName}</h3>
+   	    <h3 className="widgetHeader">{displayName}</h3>
         <ul className="list-unstyled">
           {renderRepos(list, rowName)}
         </ul>

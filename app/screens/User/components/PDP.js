@@ -9,16 +9,16 @@ export default class PDP extends Component {
     return (
       <section>
         <div className="row">
-          <div className="col-sm-7">
+          <div className="col-sm-6">
             <img
               src={productData.productLargeImgURL}
               className="img-rounded img-responsive main_image"
               alt="User Avatar"
             />
           </div>
-          <div className="col-sm-5">
-            <h2>{productData.productName}</h2>
-            <h3>{productData.productDescription}</h3>
+          <div className="col-sm-6">
+            <h2 style={{color: "#7703da"}}>{productData.productName}</h2>
+            <p style={{fontSize: "18px"}}>{productData.productDescription}</p>
           </div>
         </div>
       </section>

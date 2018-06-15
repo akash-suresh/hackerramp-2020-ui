@@ -18,6 +18,7 @@ function YouTubeItem({row}) {
             <h4 className="reviewTitle"><a href={row.reviewPermaLink}>{row.reviewTitle}</a></h4>
             <strong className="reviewStrong">{row.reviewerName}</strong>
             <p>{row.reviewContent.substr(0,200)+"..."}</p>
+            <p style={{color:'#ff9635'}}>{row.timeOfReview}</p>
           </div>
         </div>
       </li>
