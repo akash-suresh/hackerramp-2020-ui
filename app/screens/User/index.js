@@ -3,8 +3,8 @@ import Profile from './components/Profile'
 import RepoFilter from './components/RepoFilter'
 import RepoList from './components/RepoList'
 import PDP from './components/PDP'
-//import Widget from './components/Widget'
-
+import Widget from './components/Widget'
+import TwitterWidget from './components/TwitterWidget'
 import {getProductData} from '../../utils/critico-api'
 
 export default class User extends Component {
@@ -14,13 +14,13 @@ export default class User extends Component {
   }
 
   getProductData() {
-    const {username} = this.props
+    const {username} = this.props.params
     this.props.getProductData(username).then(productData => {
       this.setState({productData});
     });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getProductData();
   }
 
@@ -31,30 +31,33 @@ export default class User extends Component {
   render() {
     const {username} = this.props.params
     const {productData} = this.state
-    // var name = this.
-    var list = [1,2,3,4,5]
     return (
       <div className="container">
         <section className="user border-bottom">
           <div className="row">
             <div className="col-sm-9">
-              <h3 className="The-Reviewer">The Reviewer</h3>
+              <h3 className="The-Reviewer">Critico</h3>
             </div>
             <div className="col-sm-3">
-              <RepoFilter onUpdate={this.handleFilterUpdate} />
+              
             </div>
           </div>
         </section>
 
-        <div className="row">
+        <div className="row border-bottom">
           <PDP productData={productData}/>
         </div>
         <div className="row">
-          <div className="col-sm-6">
-            <RepoList filter={"abcd"} username={username}/>
+          <div className="col-sm-4">
+            <TwitterWidget username={username} list={productData.socialReviews} displayName={"Social Signals"} rowName={"Twitter"} />
           </div>
-          <div className="col-sm-6">
+          <div className="col-sm-4">
+            <Widget list={productData.videoReviews} displayName={"Video Reviews"} rowName={"YouTube"} />
           </div>
+          <div className="col-sm-4">
+            <Widget list={productData.userReviews} displayName={"User Reviews"} rowName={"Reviews"}/>
+          </div>
+          
         </div>
       </div>
     );
@@ -62,9 +65,7 @@ export default class User extends Component {
 }
 
 User.propTypes = {
-  params: PropTypes.shape({
-    username: PropTypes.string,
-  }),
+  params: PropTypes.object,
   getProductData: PropTypes.func,
 }
 

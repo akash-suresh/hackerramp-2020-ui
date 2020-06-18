@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Tajawal:200');
+
 body {
 	color: #666;
+  /*font-family: ‘Tajawal’, sans-serif;*/
 }
 time, strong, small {
 	color: #888;
 }
 strong {
-	margin-left: 10px;
+	margin-left: 8px;
 }
 h2, h4 {
 	color: #333;
@@ -21,6 +24,52 @@ section {
 	padding: 20px 0;
 }
 
+button, input, select, textarea {
+	width: 525px;
+	height: 30px;
+  font-style: italic;
+}
+.widgetHeader {
+  color: #7703da;
+}
+.twitterButton {
+ border: none;
+    width: auto;
+    height: auto;
+}   
+
+.twitterDP {
+  border-radius: 60px;
+}
+.home-item {
+  width: 70px;
+  height: 30px;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4a4a4a;
+}
+.The-Reviewer-Home {
+  margin-left: 40px;
+  width: 1051px;
+  height: 171px;
+  font-family: Georgia;
+  font-size: 150px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #9c958d;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
 .The-Reviewer {
   width: 351px;
   height: 57px;
@@ -32,20 +81,34 @@ section {
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  color: #000000;
+  color: #9c958d;
   background-color: #ffffff;
 }
 
+.selectDropDown {
+	text-align: center;
+}
 .border-bottom {
 	border-bottom: 1px solid #eee;
 }
 
 .main_image {
-    height: 300px;
+    height: 450px;
     display: inline;
     margin-left: 30px;
 }
+.review_image {
+    max-width: 100px;
+}
+.reviewTitle {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
+.reviewStrong {
+    margin-left: 0px;
+    color: #000000;
+}
 section.home {
 	padding-top: 200px;
 	text-align: center;

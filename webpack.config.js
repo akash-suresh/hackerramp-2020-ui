@@ -25,6 +25,7 @@ module.exports = env => {
         {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
         {test: /\.css$/, loader: 'style-loader!css-loader'},
         {test: /(\.eot|\.woff2|\.woff|\.ttf|\.svg)/, loader: 'file-loader'},
+        {test: /\.jpg$/, loader: "url-loader", query: { mimetype: "image/jpg" }}
       ],
     },
     plugins: removeEmpty([
