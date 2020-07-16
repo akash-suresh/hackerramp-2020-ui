@@ -2,6 +2,12 @@ import React, {Component, PropTypes} from 'react';
 import {getLeaderboardData} from '../../utils/critico-api'
 import { browserHistory } from 'react-router';
 
+const trophies = [
+  "https://image.flaticon.com/icons/svg/2502/2502694.svg",
+  "https://image.flaticon.com/icons/svg/2502/2502698.svg",
+  "https://image.flaticon.com/icons/svg/2502/2502702.svg",
+  "https://image.flaticon.com/icons/svg/2502/2502830.svg"
+]
 export default class Leaderboard extends Component {
   constructor() {
     super()
@@ -9,7 +15,7 @@ export default class Leaderboard extends Component {
   }
 
   getLeaderboardData() {
-    this.props.getLeaderboardData(20).then(leaderboardData => {
+    this.props.getLeaderboardData(5).then(leaderboardData => {
         console.log(leaderboardData);
         this.setState({leaderboardData});
     });
@@ -90,6 +96,9 @@ const ColumnHeader = ({
             <div className="col-xs-5">
                 <h4><b>User</b></h4>
             </div>
+            {/* <div className="col-xs-2">
+                <h4><b>User</b></h4>
+            </div> */}
             <div className="col-xs-4 timeTaken">
                 <h4><b>Time taken</b></h4>
             </div>
@@ -113,7 +122,10 @@ RetryFooter.propTypes = {
 const User = ({ rank, emailId, timeTaken }) => {
     return (
         <div className="row users  vcenter">
-            <div className="col-xs-3 rank">
+            <div className="col-xs-1">
+                <img src={trophies[Math.min(rank-1, trophies.length-1)]} className="trophy"/>
+            </div>
+            <div className="col-xs-2 rank">
                 <h4>{ rank }</h4>
             </div>
             <div className="col-xs-5 emailId">
