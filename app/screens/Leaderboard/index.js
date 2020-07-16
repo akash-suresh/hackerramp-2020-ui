@@ -24,8 +24,6 @@ export default class Leaderboard extends Component {
   }
 
   onRetryClick = () => {
-      console.log("CLICK")
-    // window.open("https://www.google.com")
     window.location.href = "http://localhost:9999/hackerramp/?u=Deepak"
   }
 
@@ -47,6 +45,9 @@ export default class Leaderboard extends Component {
     //         </div>
     //       </div>
         <div>
+          <div className="headerImage">
+            <img src="https://i.postimg.cc/RZFz6v0w/header.png" className="headerImageImage"/>
+          </div>
           <div className="container">
             <LeaderboardHeader />
             <ColumnHeader onClickAll={this._clickAllTime} onClick={this._clickRecent}/>
