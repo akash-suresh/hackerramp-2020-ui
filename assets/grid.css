@@ -60,7 +60,8 @@ body {
   text-align: center;
 }
 .users .emailId {
-  text-align: left;
+  text-align: middle;
+  padding-left: 10px;
 }
 .users .emailId a {
   padding-top: 15px;

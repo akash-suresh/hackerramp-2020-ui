@@ -71,13 +71,13 @@ const ColumnHeader = ({
     onClickAll
     }) => (
         <div className="row colheader">
-            <div className="col-xs-1">
+            <div className="col-xs-3">
                 <h4>Rank</h4>
             </div>
-            <div className="col-xs-2">
+            <div className="col-xs-5">
                 <h4>User </h4>
             </div>
-            <div className="col-xs-3">
+            <div className="col-xs-3 timeTaken">
                 <h4>Time taken</h4>
             </div>
         </div>
@@ -91,10 +91,10 @@ ColumnHeader.propTypes = {
 const User = ({ rank, emailId, timeTaken }) => {
     return (
         <div className="row users  vcenter">
-            <div className="col-xs-1 rank">
+            <div className="col-xs-3 rank">
                 <h4>{ rank }</h4>
             </div>
-            <div className="col-xs-2 rank">
+            <div className="col-xs-5 emailId">
                 <h4>{ emailId }</h4>
             </div>
             <div className="col-xs-3">
