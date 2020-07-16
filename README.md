@@ -4,15 +4,14 @@ React example app that demonstrates using [React] with [webpack], and [babeljs],
 
 Requirements:
 - git
-- Node v6
-- npm v3
+- Node v10
 
 To run the app locally:
 
 ```bash
 git clone https://github.com/mzabriskie/react-example.git
 cd react-example
-npm run setup
+yarn install
 npm run dev
 open http://localhost:8080
 ```
