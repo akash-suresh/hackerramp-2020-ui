@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {getLeaderboardData} from '../../utils/critico-api'
+import { browserHistory } from 'react-router';
 
 export default class Leaderboard extends Component {
   constructor() {
@@ -22,6 +23,12 @@ export default class Leaderboard extends Component {
     //sfsf
   }
 
+  onRetryClick = () => {
+      console.log("CLICK")
+    // window.open("https://www.google.com")
+    window.location.href = "http://localhost:9999/hackerramp/?u=Deepak"
+  }
+
   render() {
     // const {username} = this.props.params
     const {leaderboardData} = this.state
@@ -39,11 +46,16 @@ export default class Leaderboard extends Component {
     //           <h3 className="The-Reviewer">Leaderboard</h3>
     //         </div>
     //       </div>
+        <div>
           <div className="container">
             <LeaderboardHeader />
             <ColumnHeader onClickAll={this._clickAllTime} onClick={this._clickRecent}/>
             { userlist }
           </div>
+          <div className="container2">
+            <RetryFooter onClick={this.onRetryClick}/>
+          </div>
+        </div>
     //     </section>
     //   </div>
     );
@@ -72,20 +84,29 @@ const ColumnHeader = ({
     }) => (
         <div className="row colheader">
             <div className="col-xs-3">
-                <h4>Rank</h4>
+                <h4><b>Rank</b></h4>
             </div>
             <div className="col-xs-5">
-                <h4>User </h4>
+                <h4><b>User</b></h4>
             </div>
-            <div className="col-xs-3 timeTaken">
-                <h4>Time taken</h4>
+            <div className="col-xs-4 timeTaken">
+                <h4><b>Time taken</b></h4>
             </div>
         </div>
 );
       
-ColumnHeader.propTypes = {
-    onClick: React.PropTypes.func,
-    onClickAll: React.PropTypes.func
+const RetryFooter = ({
+    onClick
+    }) => (
+        <div className="row colheader" onClick={onClick} >
+            <div className="col-xs-3 retry">
+                <h5><b>RETRY</b></h5>
+            </div>
+        </div>
+);
+
+RetryFooter.propTypes = {
+    onClick: React.PropTypes.func
 }
       
 const User = ({ rank, emailId, timeTaken }) => {
@@ -97,8 +118,8 @@ const User = ({ rank, emailId, timeTaken }) => {
             <div className="col-xs-5 emailId">
                 <h4>{ emailId }</h4>
             </div>
-            <div className="col-xs-3">
-                <h4>{ timeTaken }</h4>
+            <div className="col-xs-4">
+                <h4>{ Math.round(timeTaken * 100) / 100 + " seconds"}</h4>
             </div>
         </div>
     )

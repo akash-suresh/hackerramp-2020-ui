@@ -12,6 +12,13 @@ body {
   margin: 80px auto;
 }
 
+.container2 {
+  width: 80px;
+  border-radius: 25px;
+  margin: 80px auto;
+  margin-right: 150px;
+}
+
 .leadheader {
   width: 100%;
   height: 70px;
