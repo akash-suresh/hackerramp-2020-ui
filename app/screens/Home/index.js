@@ -12,7 +12,7 @@ export default class Home extends Component {
   handleSubmit = (value, e) => {
     debugger
     this.setState({value})
-    this.context.router.push({pathname: `/${e.id}`});
+    this.context.router.push({pathname: `/product/${e.id}`});
   }
 
   render() {
